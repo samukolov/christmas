@@ -14,6 +14,16 @@
 				border-radius: 50%;
 				pointer-events: none;
 			}
+
+			.info-area {
+				position: fixed;
+				top: 90%;
+				left: 10%;
+				background-color: rgba(255, 255, 255, 0.3);
+				border-radius: 10px;
+				transform: translate(-50%, -70%);
+				padding: 20px;
+			}
 		</style>
 	</head>
 	<body>
@@ -22,12 +32,46 @@
 			<div class="position-absolute circle" id="cursor"></div>
 		</div>
 
+		<div class="info-area">
+			<div class="row">
+				<div class="col-1">
+					<small>X</small>
+				</div>
+
+				<div class="col">
+					<input class="form-control form-control-sm" id="coordX" readonly disabled>
+				</div>
+			</div>
+
+			<div class="row mt-1">
+				<div class="col-1">
+					<small>Y</small>
+				</div>
+
+				<div class="col">
+					<input class="form-control form-control-sm" id="coordY" readonly disabled>
+				</div>
+			</div>
+
+			<div class="row mt-2">
+				<div class="col d-grid pe-1">
+					<button class="btn btn-sm btn-outline-success" type="button">Check</button>
+				</div>
+
+				<div class="col d-grid ps-1">
+					<button class="btn btn-sm btn-outline-primary" type="button">Connect</button>
+				</div>
+			</div>
+		</div>
+
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 		<script type="text/javascript">
 			const father = document.getElementById('father')
 			const worldmap = document.getElementById('worldmap')
 			const cursorCircle = document.getElementById('cursor');
+			const coordX = document.getElementById('coordX');
+			const coordY = document.getElementById('coordY');
 
 			const adjustImage = () => {
 				worldmap.style.height = window.innerHeight + 'px'
@@ -45,6 +89,9 @@
 			window.onmousemove = (e) => {
 				const x = e.clientX - father.getBoundingClientRect().left;
 				const y = e.clientY - father.getBoundingClientRect().top;
+
+				coordX.value = Math.floor( x );
+				coordY.value = Math.floor( y );
 
 				cursorCircle.style.left = `${x - 10}px`; // Adjust for circle's size
 				cursorCircle.style.top = `${y - 10}px`;  // Adjust for circle's size
