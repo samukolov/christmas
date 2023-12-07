@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Bootstrap demo</title>
+		<script src="https://kit.fontawesome.com/37d6505749.js" crossorigin="anonymous"></script>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 		<style type="text/css">
 			.circle {
@@ -19,7 +20,7 @@
 				position: fixed;
 				top: 95%;
 				left: 5%;
-				background-color: rgba(255, 255, 255, 0.3);
+				background-color: rgba(255, 255, 255, 0.5);
 				border-radius: 10px;
 				transform: translate(0%, -100%);
 			}
@@ -32,6 +33,12 @@
 		</div>
 
 		<div class="info-area p-3">
+			<!-- <div class="row m-1">
+				<div class="col d-grid">
+					<button class="btn btn-sm btn-primary">Connect Wallet</button>
+				</div>
+			</div> -->
+
 			<div class="row m-1">
 				<div class="input-group input-group-sm p-0">
 					<span class="input-group-text">Your Reward:</span>
@@ -44,7 +51,7 @@
 					<button class="btn btn-sm btn-outline-primary" type="button">Docs</button>
 				</div>
 
-				<div class="col d-grid p-0 pe-1">
+				<div class="col d-grid p-0">
 					<button class="btn btn-sm btn-outline-primary" type="button">Referral</button>
 				</div>
 
@@ -55,12 +62,21 @@
 
 			<hr>
 
-
 			<div class="row m-1">
 				<div class="input-group input-group-sm p-0">
 					<span class="input-group-text">Location:</span>
 					<input type="text" class="form-control" id="coordX" style="width: 50px;" readonly disabled>
 					<input type="text" class="form-control" id="coordY" style="width: 50px;" readonly disabled>
+				</div>
+			</div>
+
+			<div class="row m-1">
+				<div class="input-group input-group-sm p-0">
+					<span class="input-group-text">Quantity:</span>
+					<input type="number" class="form-control" id="" value="1" style="width: 70px;">
+					<span class="input-group-text">=</span>
+					<input type="text" class="form-control" id="" value="0,00044" style="width: 90px;" readonly disabled>
+					<span class="input-group-text">ETH</span>
 				</div>
 			</div>
 
@@ -72,12 +88,223 @@
 			</div>
 
 			<div class="row m-1">
-				<div class="col d-grid p-0">
+				<div class="col d-grid p-0 pe-1">
+					<button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+						Rewards
+					</button>
+				</div>
+
+				<div class="col d-grid p-0 ps-1">
 					<button class="btn btn-sm btn-success" type="button">Scan!</button>
 				</div>
 			</div>
 		</div>
 
+
+		<!-- Success Toast -->
+		<div class="toast-container position-fixed bottom-0 end-0 p-3">
+			<div id="successToast" class="toast text-bg-success" role="alert" aria-live="assertive" aria-atomic="true">
+				<div class="toast-header">
+					<img src="images/santa.png" class="rounded me-2" height="25">
+					<strong class="me-auto">To be announced</strong>
+					<!-- <small>11 mins ago</small> -->
+					<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+				</div>
+				<div class="toast-body">
+					Stay Tuned!
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="exampleModalLabel">Rewards on the map:</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Reward</th>
+									<th>Total</th>
+									<th>Amount</th>
+									<th>Claimed</th>
+									<th>Available</th>
+								</tr>
+							</thead>
+							
+							<tbody>
+								<tr>
+									<td>
+										<img class="img-fluid" src="images/santa.png" style="height: 50px;">
+										Santa
+									</td>
+									<td>1</td>
+									<td>100,000</td>
+									<td>0</td>
+									<td>100,000</td>
+								</tr>
+
+								<tr>
+									<td>
+										<img class="img-fluid" src="images/deer.png" style="height: 50px;">
+										Reindeer
+									</td>
+									<td>2</td>
+									<td>10,000</td>
+									<td>0</td>
+									<td>2,000</td>
+								</tr>
+
+								<tr>
+									<td>
+										<img class="img-fluid" src="images/sleigh.png" style="height: 50px;">
+										Sleigh
+									</td>
+									<td>6</td>
+									<td>5,000</td>
+									<td>0</td>
+									<td>30,000</td>
+								</tr>
+
+								<tr>
+									<td>
+										<img class="img-fluid" src="images/wand.png" style="height: 50px;">
+										Magic Wand
+									</td>
+									<td>10</td>
+									<td>2,500</td>
+									<td>0</td>
+									<td>25,000</td>
+								</tr>
+
+								<tr>
+									<td>
+										<img class="img-fluid" src="images/hat.png" style="height: 50px;">
+										Santa Hat
+									</td>
+									<td>25</td>
+									<td>1,000</td>
+									<td>0</td>
+									<td>25,000</td>
+								</tr>
+
+								<tr>
+									<td>
+										<img class="img-fluid" src="images/elf.png" style="height: 50px;">
+										Elf
+									</td>
+									<td>50</td>
+									<td>500</td>
+									<td>0</td>
+									<td>25,000</td>
+								</tr>
+
+								<tr>
+									<td>
+										<img class="img-fluid" src="images/giftbag.png" style="height: 50px;">
+										Gift Bag
+									</td>
+									<td>100</td>
+									<td>250</td>
+									<td>0</td>
+									<td>25,000</td>
+								</tr>
+
+								<tr>
+									<td>
+										<img class="img-fluid" src="images/snowman.png" style="height: 50px;">
+										Snowman
+									</td>
+									<td>500</td>
+									<td>100</td>
+									<td>0</td>
+									<td>50,000</td>
+								</tr>
+
+								<tr>
+									<td>
+										<img class="img-fluid" src="images/snowflake.png" style="height: 50px;">
+										Snowflake
+									</td>
+									<td>1,000</td>
+									<td>50</td>
+									<td>0</td>
+									<td>50,000</td>
+								</tr>
+
+								<tr>
+									<td>
+										<img class="img-fluid" src="images/snowball.png" style="height: 50px;">
+										Snowball
+									</td>
+									<td>2,000</td>
+									<td>25</td>
+									<td>0</td>
+									<td>50,000</td>
+								</tr>
+
+								<tr>
+									<td>
+										<img class="img-fluid" src="images/rope.png" style="height: 50px;">
+										Xmas Rope
+									</td>
+									<td>10,000</td>
+									<td>10</td>
+									<td>0</td>
+									<td>50,000</td>
+								</tr>
+
+								<tr>
+									<td>
+										<img class="img-fluid" src="images/ball.png" style="height: 50px;">
+										Xmas Ball
+									</td>
+									<td>20,000</td>
+									<td>5</td>
+									<td>0</td>
+									<td>100,000</td>
+								</tr>
+
+								<tr>
+									<td>
+										<img class="img-fluid" src="images/candycane.png" style="height: 50px;">
+										Candy Cane
+									</td>
+									<td>50,000</td>
+									<td>2</td>
+									<td>0</td>
+									<td>100,000</td>
+								</tr>
+
+								<tr>
+									<td>
+										<img class="img-fluid" src="images/lollypop.png" style="height: 50px;">
+										Lollypop
+									</td>
+									<td>100,000</td>
+									<td>1</td>
+									<td>0</td>
+									<td>100,000</td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+					<!-- <div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					</div> -->
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<script src="js/jquery.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 		<script type="text/javascript">
@@ -116,6 +343,34 @@
 				cursorCircle.style.left = `${x - 10}px`; // Adjust for circle's size
 				cursorCircle.style.top = `${y - 10}px`;  // Adjust for circle's size
 			}
+
+			window.onclick = (e) => {
+				triggerSuccessToast("Click", "Open Metamask")
+			}
+
+			function triggerSuccessToast(title, text) {
+				let div = $('#successToast')
+				if (title) div.find("strong").text(title)
+				if (text) div.find(".toast-body").text(text)
+
+				const toast = new bootstrap.Toast($('#successToast'))
+				toast.show()
+			}
 		</script>
 	</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
