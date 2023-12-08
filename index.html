@@ -47,7 +47,13 @@
 			<div class="position-absolute circle d-none" id="cursor"></div>
 		</div>
 
-		<div class="col-12 col-md-6 col-xl-4 position-absolute top-100 start-0 bottom-left bg-light bg-opacity-75 p-2" id="mother">
+		<div class="position-absolute top-100 start-0 bottom-left d-none ps-3 pb-3" id="collapseButton">
+			<button class="btn btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#mother" aria-expanded="false" aria-controls="mother">
+				<i class="fa-solid fa-arrow-up-right-from-square"></i>
+			</button>
+		</div>
+
+		<div class="col-12 col-md-6 col-xl-4 position-absolute top-100 start-0 bottom-left bg-light bg-opacity-75 p-2 collapse show" id="mother">
 			<!-- <div class="row m-1">
 				<div class="col d-grid">
 					<button class="btn btn-sm btn-primary">Connect Wallet</button>
@@ -103,9 +109,9 @@
 			</div>
 
 			<div class="row m-1">
-				<div class="col-1 d-grid p-0">
-					<button class="btn btn-sm btn-outline-primary" id="relocateButton">
-						<i class="fa-solid fa-arrows-up-down"></i>
+				<div class="col-auto d-grid p-0">
+					<button class="btn btn-sm btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#mother" aria-expanded="false" aria-controls="mother">
+						Hide
 					</button>
 				</div>
 
@@ -341,7 +347,7 @@
 			const rewardModal = document.getElementById('rewardModal');
 			const coordX = document.getElementById('coordX');
 			const coordY = document.getElementById('coordY');
-			const relocateButton = document.getElementById('relocateButton');
+			const collapseButton = document.getElementById('collapseButton');
 
 			father.onclick = (e) => {
 				triggerSuccessToast("Click", "Open Metamask")
@@ -365,22 +371,13 @@
 				cursorCircle.classList.remove('d-none');
 			}
 
-			relocateButton.onclick = (e) => {
-				if (mother.classList.contains('top-100')) {
-					mother.classList.remove('top-100')
-					mother.classList.remove('bottom-left')
-					mother.classList.add('top-0')
-					relocateButton.classList.remove('btn-up')
-					relocateButton.classList.add('btn-down')
+			mother.addEventListener('hidden.bs.collapse', event => {
+				collapseButton.classList.remove('d-none')
+			})
 
-				} else {
-					mother.classList.remove('top-0')
-					mother.classList.add('top-100')
-					mother.classList.add('bottom-left')
-					relocateButton.classList.remove('btn-down')
-					relocateButton.classList.add('btn-up')
-				}
-			}
+			mother.addEventListener('shown.bs.collapse', event => {
+				collapseButton.classList.add('d-none')
+			})
 
 			const adjustImage = () => {
 				const viewportHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
