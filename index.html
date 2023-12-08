@@ -25,7 +25,7 @@
 				padding: 0;
 				height: 100%;
 				overflow-x: auto;
-				overflow-y: hidden;
+/*				overflow-y: hidden;*/
 			}
 
 			.circle {
@@ -45,7 +45,7 @@
 	<body>
 		<div class="position-relative" id="father">
 			<img id="worldmap" src="images/worldmap.jpg" style="">
-			<div class="position-absolute circle" id="cursor"></div>
+			<div class="position-absolute circle d-none" id="cursor"></div>
 		</div>
 
 		<div class="col-12 col-md-6 col-xl-4 position-absolute top-100 start-0 bottom-left bg-light bg-opacity-75 p-2" id="mother">
@@ -362,7 +362,7 @@
 
 				cursorCircle.style.left = `${x - 10}px`;
 				cursorCircle.style.top = `${y - 10}px`;
-				cursorCircle.classList.remove('d-none');
+				// cursorCircle.classList.remove('d-none');
 			}
 
 			relocateButton.onclick = (e) => {
@@ -382,6 +382,11 @@
 				}
 			}
 
+
+
+
+
+
 			const adjustImage = () => {
 				const viewportHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
 
@@ -395,6 +400,10 @@
 			window.onload = () => {
 				adjustImage();
 			}
+
+			window.onresize = () => {
+				adjustImage()
+			};
 
 			function triggerSuccessToast(title, text) {
 				let div = $('#successToast')
