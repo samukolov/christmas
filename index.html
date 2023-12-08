@@ -37,12 +37,7 @@
 				pointer-events: none;
 			}
 
-			.info-area {
-				position: fixed;
-				top: 95%;
-				left: 5%;
-				background-color: rgba(255, 255, 255, 0.5);
-				border-radius: 10px;
+			.bottom-left {
 				transform: translate(0%, -100%);
 			}
 		</style>
@@ -53,7 +48,7 @@
 			<div class="position-absolute circle" id="cursor"></div>
 		</div>
 
-		<div class="info-area p-3">
+		<div class="col-12 col-md-6 col-xl-4 position-absolute top-100 start-0 bottom-left bg-light bg-opacity-75 p-2" id="mother">
 			<!-- <div class="row m-1">
 				<div class="col d-grid">
 					<button class="btn btn-sm btn-primary">Connect Wallet</button>
@@ -109,7 +104,13 @@
 			</div>
 
 			<div class="row m-1">
-				<div class="col d-grid p-0 pe-1">
+				<div class="col-1 d-grid p-0 pe-1">
+					<button class="btn btn-sm btn-outline-primary" id="relocateButton">
+						<i class="fa-solid fa-arrows-up-down"></i>
+					</button>
+				</div>
+
+				<div class="col d-grid p-0">
 					<button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#rewardModal">
 						Rewards
 					</button>
@@ -151,168 +152,168 @@
 						<tr>
 							<td align="center"><img class="img-fluid" src="images/santa.png"></td>
 							<td>
-								<div><b>Title:</b> Santa</div>
-								<div><b>Quantity:</b> 1</div>
-								<div><b>Reward:</b> 100,000</div>
-								<div><b>Total:</b> 100,000</div>
-								<div><b>Claimed:</b> 0</div>
-								<div><b>Available:</b> 1</div>
+								<div><small><b>Title:</b> Santa</small></div>
+								<div><small><b>Quantity:</b> 1</small></div>
+								<div><small><b>Reward:</b> 100,000</small></div>
+								<div><small><b>Total:</b> 100,000</small></div>
+								<div><small><b>Claimed:</b> 0</small></div>
+								<div><small><b>Available:</b> 1</small></div>
 							</td>
 						</tr>
 
 						<tr>
 							<td align="center"><img class="img-fluid" src="images/deer.png"></td>
 							<td>
-								<div><b>Title:</b> Reindeer</div>
-								<div><b>Quantity:</b> 2</div>
-								<div><b>Reward:</b> 10,000</div>
-								<div><b>Total:</b> 20,000</div>
-								<div><b>Claimed:</b> 0</div>
-								<div><b>Available:</b> 2</div>
+								<div><small><b>Title:</b> Reindeer</small></div>
+								<div><small><b>Quantity:</b> 2</small></div>
+								<div><small><b>Reward:</b> 10,000</small></div>
+								<div><small><b>Total:</b> 20,000</small></div>
+								<div><small><b>Claimed:</b> 0</small></div>
+								<div><small><b>Available:</b> 2</small></div>
 							</td>
 						</tr>
 
 						<tr>
 							<td align="center"><img class="img-fluid" src="images/sleigh.png"></td>
 							<td>
-								<div><b>Title:</b> Sleigh</div>
-								<div><b>Quantity:</b> 6</div>
-								<div><b>Reward:</b> 5,000</div>
-								<div><b>Total:</b> 30,000</div>
-								<div><b>Claimed:</b> 0</div>
-								<div><b>Available:</b> 6</div>
+								<div><small><b>Title:</b> Sleigh</small></div>
+								<div><small><b>Quantity:</b> 6</small></div>
+								<div><small><b>Reward:</b> 5,000</small></div>
+								<div><small><b>Total:</b> 30,000</small></div>
+								<div><small><b>Claimed:</b> 0</small></div>
+								<div><small><b>Available:</b> 6</small></div>
 							</td>
 						</tr>
 
 						<tr>
 							<td align="center"><img class="img-fluid" src="images/wand.png"></td>
 							<td>
-								<div><b>Title:</b> Magic Wand</div>
-								<div><b>Quantity:</b> 10</div>
-								<div><b>Reward:</b> 2,500</div>
-								<div><b>Total:</b> 25,000</div>
-								<div><b>Claimed:</b> 0</div>
-								<div><b>Available:</b> 10</div>
+								<div><small><b>Title:</b> Magic Wand</small></div>
+								<div><small><b>Quantity:</b> 10</small></div>
+								<div><small><b>Reward:</b> 2,500</small></div>
+								<div><small><b>Total:</b> 25,000</small></div>
+								<div><small><b>Claimed:</b> 0</small></div>
+								<div><small><b>Available:</b> 10</small></div>
 							</td>
 						</tr>
 
 						<tr>
 							<td align="center"><img class="img-fluid" src="images/hat.png"></td>
 							<td>
-								<div><b>Title:</b> Santa Hat</div>
-								<div><b>Quantity:</b> 25</div>
-								<div><b>Reward:</b> 1,000</div>
-								<div><b>Total:</b> 25,000</div>
-								<div><b>Claimed:</b> 0</div>
-								<div><b>Available:</b> 25</div>
+								<div><small><b>Title:</b> Santa Hat</small></div>
+								<div><small><b>Quantity:</b> 25</small></div>
+								<div><small><b>Reward:</b> 1,000</small></div>
+								<div><small><b>Total:</b> 25,000</small></div>
+								<div><small><b>Claimed:</b> 0</small></div>
+								<div><small><b>Available:</b> 25</small></div>
 							</td>
 						</tr>
 
 						<tr>
 							<td align="center"><img class="img-fluid" src="images/elf.png"></td>
 							<td>
-								<div><b>Title:</b> Elf</div>
-								<div><b>Quantity:</b> 50</div>
-								<div><b>Reward:</b> 500</div>
-								<div><b>Total:</b> 25,000</div>
-								<div><b>Claimed:</b> 0</div>
-								<div><b>Available:</b> 500</div>
+								<div><small><b>Title:</b> Elf</small></div>
+								<div><small><b>Quantity:</b> 50</small></div>
+								<div><small><b>Reward:</b> 500</small></div>
+								<div><small><b>Total:</b> 25,000</small></div>
+								<div><small><b>Claimed:</b> 0</small></div>
+								<div><small><b>Available:</b> 500</small></div>
 							</td>
 						</tr>
 
 						<tr>
 							<td align="center"><img class="img-fluid" src="images/giftbag.png"></td>
 							<td>
-								<div><b>Title:</b> Gift Bag</div>
-								<div><b>Quantity:</b> 100</div>
-								<div><b>Reward:</b> 250</div>
-								<div><b>Total:</b> 25,000</div>
-								<div><b>Claimed:</b> 0</div>
-								<div><b>Available:</b> 100</div>
+								<div><small><b>Title:</b> Gift Bag</small></div>
+								<div><small><b>Quantity:</b> 100</small></div>
+								<div><small><b>Reward:</b> 250</small></div>
+								<div><small><b>Total:</b> 25,000</small></div>
+								<div><small><b>Claimed:</b> 0</small></div>
+								<div><small><b>Available:</b> 100</small></div>
 							</td>
 						</tr>
 
 						<tr>
 							<td align="center"><img class="img-fluid" src="images/snowman.png"></td>
 							<td>
-								<div><b>Title:</b> Snowman</div>
-								<div><b>Quantity:</b> 500</div>
-								<div><b>Reward:</b> 100</div>
-								<div><b>Total:</b> 50,000</div>
-								<div><b>Claimed:</b> 0</div>
-								<div><b>Available:</b> 500</div>
+								<div><small><b>Title:</b> Snowman</small></div>
+								<div><small><b>Quantity:</b> 500</small></div>
+								<div><small><b>Reward:</b> 100</small></div>
+								<div><small><b>Total:</b> 50,000</small></div>
+								<div><small><b>Claimed:</b> 0</small></div>
+								<div><small><b>Available:</b> 500</small></div>
 							</td>
 						</tr>
 
 						<tr>
 							<td align="center"><img class="img-fluid" src="images/snowflake.png"></td>
 							<td>
-								<div><b>Title:</b> Snowflake</div>
-								<div><b>Quantity:</b> 1,000</div>
-								<div><b>Reward:</b> 50</div>
-								<div><b>Total:</b> 50,000</div>
-								<div><b>Claimed:</b> 0</div>
-								<div><b>Available:</b> 1,000</div>
+								<div><small><b>Title:</b> Snowflake</small></div>
+								<div><small><b>Quantity:</b> 1,000</small></div>
+								<div><small><b>Reward:</b> 50</small></div>
+								<div><small><b>Total:</b> 50,000</small></div>
+								<div><small><b>Claimed:</b> 0</small></div>
+								<div><small><b>Available:</b> 1,000</small></div>
 							</td>
 						</tr>
 
 						<tr>
 							<td align="center"><img class="img-fluid" src="images/snowball.png"></td>
 							<td>
-								<div><b>Title:</b> Snowball</div>
-								<div><b>Quantity:</b> 2,000</div>
-								<div><b>Reward:</b> 25</div>
-								<div><b>Total:</b> 50,000</div>
-								<div><b>Claimed:</b> 0</div>
-								<div><b>Available:</b> 2,000</div>
+								<div><small><b>Title:</b> Snowball</small></div>
+								<div><small><b>Quantity:</b> 2,000</small></div>
+								<div><small><b>Reward:</b> 25</small></div>
+								<div><small><b>Total:</b> 50,000</small></div>
+								<div><small><b>Claimed:</b> 0</small></div>
+								<div><small><b>Available:</b> 2,000</small></div>
 							</td>
 						</tr>
 
 						<tr>
 							<td align="center"><img class="img-fluid" src="images/rope.png"></td>
 							<td>
-								<div><b>Title:</b> Xmas Rope</div>
-								<div><b>Quantity:</b> 10,000</div>
-								<div><b>Reward:</b> 10</div>
-								<div><b>Total:</b> 100,000</div>
-								<div><b>Claimed:</b> 0</div>
-								<div><b>Available:</b> 10,000</div>
+								<div><small><b>Title:</b> Xmas Rope</small></div>
+								<div><small><b>Quantity:</b> 10,000</small></div>
+								<div><small><b>Reward:</b> 10</small></div>
+								<div><small><b>Total:</b> 100,000</small></div>
+								<div><small><b>Claimed:</b> 0</small></div>
+								<div><small><b>Available:</b> 10,000</small></div>
 							</td>
 						</tr>
 
 						<tr>
 							<td align="center"><img class="img-fluid" src="images/ball.png"></td>
 							<td>
-								<div><b>Title:</b> Xmas Ball</div>
-								<div><b>Quantity:</b> 20,000</div>
-								<div><b>Reward:</b> 5</div>
-								<div><b>Total:</b> 100,000</div>
-								<div><b>Claimed:</b> 0</div>
-								<div><b>Available:</b> 20,000</div>
+								<div><small><b>Title:</b> Xmas Ball</small></div>
+								<div><small><b>Quantity:</b> 20,000</small></div>
+								<div><small><b>Reward:</b> 5</small></div>
+								<div><small><b>Total:</b> 100,000</small></div>
+								<div><small><b>Claimed:</b> 0</small></div>
+								<div><small><b>Available:</b> 20,000</small></div>
 							</td>
 						</tr>
 
 						<tr>
 							<td align="center"><img class="img-fluid" src="images/candycane.png"></td>
 							<td>
-								<div><b>Title:</b> Candy Cane</div>
-								<div><b>Quantity:</b> 50,000</div>
-								<div><b>Reward:</b> 2</div>
-								<div><b>Total:</b> 100,000</div>
-								<div><b>Claimed:</b> 0</div>
-								<div><b>Available:</b> 50,000</div>
+								<div><small><b>Title:</b> Candy Cane</small></div>
+								<div><small><b>Quantity:</b> 50,000</small></div>
+								<div><small><b>Reward:</b> 2</small></div>
+								<div><small><b>Total:</b> 100,000</small></div>
+								<div><small><b>Claimed:</b> 0</small></div>
+								<div><small><b>Available:</b> 50,000</small></div>
 							</td>
 						</tr>
 
 						<tr>
 							<td align="center"><img class="img-fluid" src="images/lollypop.png"></td>
 							<td>
-								<div><b>Title:</b> Lollypop</div>
-								<div><b>Quantity:</b> 100,000</div>
-								<div><b>Reward:</b> 1</div>
-								<div><b>Total:</b> 100,000</div>
-								<div><b>Claimed:</b> 0</div>
-								<div><b>Available:</b> 100,000</div>
+								<div><small><b>Title:</b> Lollypop</small></div>
+								<div><small><b>Quantity:</b> 100,000</small></div>
+								<div><small><b>Reward:</b> 1</small></div>
+								<div><small><b>Total:</b> 100,000</small></div>
+								<div><small><b>Claimed:</b> 0</small></div>
+								<div><small><b>Available:</b> 100,000</small></div>
 							</td>
 						</tr>
 					</tbody>
@@ -334,11 +335,13 @@
 
 		<script type="text/javascript">
 			const father = document.getElementById('father')
+			const mother = document.getElementById('mother')
 			const worldmap = document.getElementById('worldmap')
 			const cursorCircle = document.getElementById('cursor');
 			const rewardModal = document.getElementById('rewardModal');
 			const coordX = document.getElementById('coordX');
 			const coordY = document.getElementById('coordY');
+			const relocateButton = document.getElementById('relocateButton');
 
 			father.onclick = (e) => {
 				triggerSuccessToast("Click", "Open Metamask")
@@ -361,6 +364,28 @@
 				cursorCircle.style.top = `${y - 10}px`;
 				cursorCircle.classList.remove('d-none');
 			}
+
+			relocateButton.onclick = (e) => {
+				if (mother.classList.contains('top-100')) {
+					mother.classList.remove('top-100')
+					mother.classList.remove('bottom-left')
+					mother.classList.add('top-0')
+					relocateButton.classList.remove('btn-up')
+					relocateButton.classList.add('btn-down')
+
+				} else {
+					mother.classList.remove('top-0')
+					mother.classList.add('top-100')
+					mother.classList.add('bottom-left')
+					relocateButton.classList.remove('btn-down')
+					relocateButton.classList.add('btn-up')
+				}
+			}
+
+
+
+
+
 
 			const adjustImage = () => {
 				const viewportHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
