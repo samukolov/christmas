@@ -382,11 +382,6 @@
 				}
 			}
 
-
-
-
-
-
 			const adjustImage = () => {
 				const viewportHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
 
@@ -400,10 +395,6 @@
 			window.onload = () => {
 				adjustImage();
 			}
-
-			window.onresize = () => {
-				adjustImage()
-			};
 
 			function triggerSuccessToast(title, text) {
 				let div = $('#successToast')
